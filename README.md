@@ -39,11 +39,11 @@ fi
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
   * Read docs [here](https://github.com/robbyrussell/oh-my-zsh)
-* Move the Oh My Zsh folder to the user shared directory
+* Move the oh-my-zsh folder to the user shared directory
 ```
 mv /root/.oh-my-zsh /usr/share/oh-my-zsh
 ```
-* Move the .zshrc filel to that directory
+* Move the zshrc file to that directory
 ```
 mv /root/.zshrc /usr/share/zshrc
 ```
