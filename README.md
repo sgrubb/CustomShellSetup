@@ -35,12 +35,18 @@ fi
 ### Oh My Zsh
 * Log in as root user `sudo -i` (going to install globally for all users)
 * Install in the root user's home directory `/root/`
-```sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"```
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
   * Read docs [here](https://github.com/robbyrussell/oh-my-zsh)
 * Move the Oh My Zsh folder to the user shared directory
-```mv /root/.oh-my-zsh /usr/share/oh-my-zsh```
+```
+mv /root/.oh-my-zsh /usr/share/oh-my-zsh
+```
 * Move the .zshrc filel to that directory
-```mv /root/.zshrc /usr/share/zshrc```
+```
+mv /root/.zshrc /usr/share/zshrc
+```
 * Open `/usr/share/zshrc` in an editor and change the `export ZSH="/root/.oh-my-zsh"` line to `export ZSH="/usr/share/oh-my-zsh"`
 * Create a custom theme
   * Create a new file `/usr/share/oh-my-zsh/themes/mytheme.zsh-theme` (can choose a different name to 'mytheme') with the following in it (a slight variation on the robbyrussell theme that includes the user if not logged in as the default user - see a few bullets down - and also the host if connected through ssh):
@@ -64,10 +70,16 @@ prompt_context() {
 ```
   * Open `/usr/share/zshrc` in an editor and change the `ZSH_THEME="robbyrussell"` line to `ZSH_THEME="mytheme"` (or whatever you named your theme)
 * Create a hard link to the zshrc file to ensure new users get a copy of it
-```ln /usr/share/oh-my-zsh/zshrc /etc/skel/.zshrc```
+```
+ln /usr/share/oh-my-zsh/zshrc /etc/skel/.zshrc
+```
 * Copy the zshrc file to root and any existing users' home directories (this will need to be done whenever it's updated)
-```cp /usr/share/oh-my-zsh/zshrc /root/.zshrc```
-```cp /usr/share/oh-my-zsh/zshrc /home/<user>```
+```
+cp /usr/share/oh-my-zsh/zshrc /root/.zshrc
+```
+```
+cp /usr/share/oh-my-zsh/zshrc /home/<user>
+```
 * Create the default user environment variable system wide
   * Create a new file `/etc/profile.d/env-vars.sh` with the following in it (with your default user):
 ```
