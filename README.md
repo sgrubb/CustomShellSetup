@@ -78,7 +78,7 @@ ln /usr/share/oh-my-zsh/zshrc /etc/skel/.zshrc
 cp /usr/share/oh-my-zsh/zshrc /root/.zshrc
 ```
 ```
-cp /usr/share/oh-my-zsh/zshrc /home/<user>
+cp /usr/share/oh-my-zsh/zshrc /home/<user>/.zshrc
 ```
 * Create the default user environment variable system wide
   * Create a new file `/etc/profile.d/env-vars.sh` with the following in it (with your default user):
@@ -86,3 +86,34 @@ cp /usr/share/oh-my-zsh/zshrc /home/<user>
 export DEFAULT_USER="<user>"
 ```
 * Close the terminal and open a new one for changes to take effect
+
+### Zsh Plugins
+
+* Log in as root user `sudo -i`
+* Install zsh-syntax-highlighting and zsh-autosuggestions
+  * Clone the repositories for each in the `/usr/share/oh-my-zsh/plugins` directory
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+```
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions.git
+```
+  * See docs for zsh-syntax-highlighting [here](https://github.com/zsh-users/zsh-syntax-highlighting) and zsh-autosuggestions [here](https://github.com/zsh-users/zsh-autosuggestions)
+* Activate these plugins and also the colored-man-pages plugin which comes with the oh-my-zsh installation
+  * Open `/usr/share/zshrc` in an editor and add `colored-man-pages`, `zsh-syntax-highlighting` and `zsh-autosuggestions` to the `plugins` array, so it looks like:
+```
+plugins=(
+  git
+  colored-man-pages
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
+```
+* Copy the zshrc file to root and any existing users' home directories (this will need to be done whenever it's updated)
+```
+cp /usr/share/oh-my-zsh/zshrc /root/.zshrc
+```
+```
+cp /usr/share/oh-my-zsh/zshrc /home/<user>/.zshrc
+```
+* Close the terminal and open a new one for changes to take effect (or `source` the relevant zshrc file for each user)
