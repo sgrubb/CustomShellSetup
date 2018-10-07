@@ -117,3 +117,9 @@ cp /usr/share/oh-my-zsh/zshrc /root/.zshrc
 cp /usr/share/oh-my-zsh/zshrc /home/<user>/.zshrc
 ```
 * Close the terminal and open a new one for changes to take effect (or `source` the relevant zshrc file for each user)
+
+---
+
+### TODO: Hyper Plugins
+* Hyper plugins don't seem to work currently with either Windows, WSL, Zsh or some combination of those, check back another time
+* The following plugins look interesting: hyperline, hyper-statusline, hypercwd, hyperlinks, hyper-search, hyper-copycat, hyperterm-tabs, hyper-pane
