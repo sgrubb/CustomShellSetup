@@ -45,9 +45,9 @@ mv /root/.oh-my-zsh /usr/share/oh-my-zsh
 ```
 * Move the zshrc file to that directory
 ```
-mv /root/.zshrc /usr/share/zshrc
+mv /root/.zshrc /usr/share/oh-my-zsh/zshrc
 ```
-* Open `/usr/share/zshrc` in an editor and change the `export ZSH="/root/.oh-my-zsh"` line to `export ZSH="/usr/share/oh-my-zsh"`
+* Open `/usr/share/oh-my-zsh/zshrc` in an editor and change the `export ZSH="/root/.oh-my-zsh"` line to `export ZSH="/usr/share/oh-my-zsh"`
 * Create a custom theme
   * Create a new file `/usr/share/oh-my-zsh/themes/mytheme.zsh-theme` (can choose a different name to 'mytheme') with the following in it (a slight variation on the robbyrussell theme that includes the user if not logged in as the default user - see a few bullets down - and also the host if connected through ssh):
 ```
