@@ -100,7 +100,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git
 ```
   * See docs for zsh-syntax-highlighting [here](https://github.com/zsh-users/zsh-syntax-highlighting) and zsh-autosuggestions [here](https://github.com/zsh-users/zsh-autosuggestions)
 * Activate these plugins and also the colored-man-pages plugin which comes with the oh-my-zsh installation
-  * Open `/usr/share/zshrc` in an editor and add `colored-man-pages`, `zsh-syntax-highlighting` and `zsh-autosuggestions` to the `plugins` array, so it looks like:
+  * Open `/usr/share/oh-my-zsh/zshrc` in an editor and add `colored-man-pages`, `zsh-syntax-highlighting` and `zsh-autosuggestions` to the `plugins` array, so it looks like:
 ```
 plugins=(
   git
