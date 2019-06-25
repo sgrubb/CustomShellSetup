@@ -9,27 +9,18 @@
 * Download for the relevant OS [here](https://hyper.is)
 * Open the Preferences file (`Ctrl` + `,` from the hyper terminal)
   * Set the `shell` setting to the relevant path below to make it automatically open with Bash:
-    * (WIN) `C:\\Windows\\System32\\bash.exe`
-    * (UBT) `/bin/bash` (should be unnecessary as will use login shell by default)
+    * (WIN) `C:\\Windows\\System32\\wsl.exe`
+    * (UBT) (should be unnecessary as will use login shell by default)
   * Set the `shellArgs` setting to `['~']` to make home the default opening directory
   * Set any style settings you'd like (I set `fontSize` to 14)
 * Save the file to save settings
 
 ### Zsh
 * Run `sudo apt-get install zsh`
-* Open `~/.bashrc` in an editor and add the following to the bottom:
+* Run `chsh -s /bin/zsh` to change your default login shell to zsh
+* Open `/etc/zsh/zprofile` in an editor (using sudo privileges) and add the following to the bottom:
 ```
-# use zsh as default.
-if [ -t 1 ]; then
-    exec zsh
-fi
-```
-* Open `/root/.bashrc` in an editor (need to use sudo privileges) and add the following to the bottom, so the root user also uses Zsh automatically (do the same for `/etc/skel/.bashrc` so the same applies to any newly created users):
-```
-# use zsh as default.
-if [ ! -z "$PS1" ]; then
-    exec /bin/zsh $*
-fi
+. /etc/profile
 ```
 
 ### Oh My Zsh
@@ -100,10 +91,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git
 ```
   * See docs for zsh-syntax-highlighting [here](https://github.com/zsh-users/zsh-syntax-highlighting) and zsh-autosuggestions [here](https://github.com/zsh-users/zsh-autosuggestions)
 * Activate these plugins and also the colored-man-pages plugin which comes with the oh-my-zsh installation
-  * Open `/usr/share/oh-my-zsh/zshrc` in an editor and add `colored-man-pages`, `zsh-syntax-highlighting` and `zsh-autosuggestions` to the `plugins` array, so it looks like:
+  * Open `/usr/share/oh-my-zsh/zshrc` in an editor and add `z`, `colored-man-pages`, `zsh-syntax-highlighting` and `zsh-autosuggestions` to the `plugins` array, so it looks like:
 ```
 plugins=(
   git
+  z
   colored-man-pages
   zsh-syntax-highlighting
   zsh-autosuggestions
