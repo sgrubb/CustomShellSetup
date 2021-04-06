@@ -54,8 +54,6 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 prompt_context() {
   if [[ -n "$SSH_CLIENT" ]]; then
     echo -n "%(!.%{%{$fg[yellow]%}%}.)$USER@%mi %{$reset_color%}"
-  else
-    echo -n "%(!.%{%{$fg[yellow]%}%}.)$USER %{$reset_color%}"
   fi
 }
 ```
