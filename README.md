@@ -31,10 +31,10 @@
 
 ### Oh My Zsh
 * Install in user home directory `~`
+  * Read docs [here](https://github.com/robbyrussell/oh-my-zsh)
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-  * Read docs [here](https://github.com/robbyrussell/oh-my-zsh)
 * (OPTIONAL) Open `~/.zshrc` in an editor and add the following line to the bottom so the physical path is used when following symbolic links (VSCode on WSL, for example, gets confused otherwise when debugging)
 ```
 alias cd="cd -P"
@@ -59,11 +59,12 @@ prompt_context() {
   fi
 }
 ```
-  * Open `~/.zshrc` in an editor and change the `ZSH_THEME="robbyrussell"` line to `ZSH_THEME="mytheme"` (or whatever name was given to the theme)
+* Open `~/.zshrc` in an editor and change the `ZSH_THEME="robbyrussell"` line to `ZSH_THEME="mytheme"` (or whatever name was given to the theme)
 * Close the terminal and open a new one for changes to take effect
 
 ### Zsh Plugins
 * Install zsh-syntax-highlighting and zsh-autosuggestions
+  * See docs for zsh-syntax-highlighting [here](https://github.com/zsh-users/zsh-syntax-highlighting) and zsh-autosuggestions [here](https://github.com/zsh-users/zsh-autosuggestions)
   * Clone the repositories for each in the `~/.oh-my-zsh/plugins` directory
 ```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
@@ -71,7 +72,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions.git
 ```
-  * See docs for zsh-syntax-highlighting [here](https://github.com/zsh-users/zsh-syntax-highlighting) and zsh-autosuggestions [here](https://github.com/zsh-users/zsh-autosuggestions)
 * Activate these plugins and also the colored-man-pages plugin which comes with the oh-my-zsh installation
   * Open `~/.zshrc` in an editor and add `z`, `colored-man-pages`, `zsh-syntax-highlighting` and `zsh-autosuggestions` to the `plugins` array:
 ```
