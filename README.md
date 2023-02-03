@@ -35,9 +35,9 @@
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-* (OPTIONAL) Open `~/.zshrc` in an editor and add the following line to the bottom so the physical path is used when following symbolic links (VSCode on WSL, for example, gets confused otherwise when debugging)
+* (OPTIONAL) Open `~/.zshrc` in an editor and add the following line to the bottom so the physical path is used when following symbolic links (VSCode on WSL, for example, gets confused otherwise when debugging), remember to use single quotes for aliases
 ```
-alias cd="cd -P"
+alias cd='cd -P'
 ```
 * Create a custom theme
   * Create a new file `~/.oh-my-zsh/themes/mytheme.zsh-theme` (can choose a different name to 'mytheme') with the following in it (a slight variation on the robbyrussell theme that includes the user if not logged in as the default user - see a few bullets down - and also the host if connected through ssh):
